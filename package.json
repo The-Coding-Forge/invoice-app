@@ -1,5 +1,7 @@
 {
   "name": "invoice",
+  "description": "Electron invoice app",
+  "author": "Yalgie",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,16 +12,23 @@
     "@types/node": "^12.12.42",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "electron-is-dev": "^1.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5"
   },
+  "homepage": "./",
+  "main": "src/electron.js",
   "scripts": {
-    "start": "react-scripts start",
+    "electron": "electron .",
+    "electron-dev": "nodemon --exec \"\"electron .\"\"",
+    "start": "cross-env BROWSER=none npm run react-start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +43,23 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-builder": "^22.7.0",
+    "electron-reload": "^1.5.0",
+    "nodemon": "^2.0.4"
+  },
+  "build": {
+    "appId": "invoice.app",
+    "extends": null,
+    "mac": {
+      "category": "business"
+    },
+    "files": [
+      "./build/**/*",
+      "./src/electron.js"
     ]
   }
 }
