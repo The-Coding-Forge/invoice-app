@@ -10,11 +10,15 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.42",
+    "@types/pdfkit": "^0.10.5",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
+    "cross-env": "^7.0.2",
     "electron-is-dev": "^1.2.0",
+    "pdfkit": "^0.11.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "typescript": "^3.7.5"
   },
@@ -23,7 +27,7 @@
   "scripts": {
     "electron": "electron .",
     "electron-dev": "nodemon --exec \"\"electron .\"\"",
-    "start": "cross-env BROWSER=none npm run react-start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -46,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-router-dom": "^5.1.5",
     "electron": "^9.0.0",
     "electron-builder": "^22.7.0",
     "electron-reload": "^1.5.0",
